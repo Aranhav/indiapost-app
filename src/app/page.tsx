@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type ModalType = "csb4" | "csb5gst" | "csb5lut" | "commercial" | "noncommercial" | null;
+type ModalType = "csb4" | "csb5gst" | "csb5lut" | "commercial" | "noncommercial" | "upgrade-csb4" | "upgrade-csb5gst" | "upgrade-csb5lut" | "upgrade-commercial" | null;
 
 interface FormData {
   hasGst: boolean;
