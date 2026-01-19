@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check, CloudUpload, Gift, Building2, ArrowRight, User } from 'lucide-react';
 
 type ModalType = "csb4" | "csb5gst" | "csb5lut" | "commercial" | "noncommercial" | "upgrade-csb4" | "upgrade-csb5gst" | "upgrade-csb5lut" | "upgrade-commercial" | null;
 
@@ -747,9 +748,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col items-center gap-1">
                       <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                        </svg>
+                        <Gift className="w-5 h-5" />
                         <span className="font-semibold">Non-Commercial</span>
                       </div>
                       <span className={`text-xs ${selectedOnboarding === "noncommercial" ? "text-gray-500" : "text-gray-400"}`}>For Gifts & Samples</span>
@@ -765,9 +764,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col items-center gap-1">
                       <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                        <Building2 className="w-5 h-5" />
                         <span className="font-semibold">Commercial</span>
                       </div>
                       <span className={`text-xs ${selectedOnboarding === "commercial" ? "text-gray-500" : "text-gray-400"}`}>For Businesses</span>
@@ -790,9 +787,7 @@ export default function Home() {
                     <div className="flex items-center gap-8">
                       <label className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700">GST</span>
                       </label>
@@ -807,9 +802,7 @@ export default function Home() {
                           }}
                         >
                           {formData.hasLut && (
-                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-3 h-3 text-white" />
                           )}
                         </div>
                         <span className="text-gray-700">LUT</span>
@@ -1039,9 +1032,7 @@ export default function Home() {
                       </div>
                       {formData.gstCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1049,9 +1040,7 @@ export default function Home() {
                           onClick={() => handleFileUpload("gstCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1072,9 +1061,7 @@ export default function Home() {
                       </div>
                       {formData.iecCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1082,9 +1069,7 @@ export default function Home() {
                           onClick={() => handleFileUpload("iecCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1105,9 +1090,7 @@ export default function Home() {
                       </div>
                       {formData.adCodeCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1115,9 +1098,7 @@ export default function Home() {
                           onClick={() => handleFileUpload("adCodeCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1139,9 +1120,7 @@ export default function Home() {
                         </div>
                         {formData.lutDocument ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -1149,9 +1128,7 @@ export default function Home() {
                             onClick={() => handleFileUpload("lutDocument")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -1260,9 +1237,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.panCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -1270,9 +1245,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("panCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -1293,9 +1266,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.aadharCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -1303,9 +1274,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("aadharCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -1328,9 +1297,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -1376,9 +1343,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col items-center gap-1">
                       <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                        <Building2 className="w-5 h-5" />
                         <span className="font-semibold">Commercial</span>
                       </div>
                       <span className={`text-xs ${selectedOnboarding === "commercial" ? "text-gray-500" : "text-gray-400"}`}>For Businesses</span>
@@ -1394,9 +1359,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col items-center gap-1">
                       <div className="flex items-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                        </svg>
+                        <Gift className="w-5 h-5" />
                         <span className="font-semibold">Non-Commercial</span>
                       </div>
                       <span className={`text-xs ${selectedOnboarding === "noncommercial" ? "text-gray-500" : "text-gray-400"}`}>For Gifts & Samples</span>
@@ -1419,9 +1382,7 @@ export default function Home() {
                     <div className="flex items-center gap-8">
                       <label className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700">GST</span>
                       </label>
@@ -1436,9 +1397,7 @@ export default function Home() {
                           }}
                         >
                           {csb5FormData.hasLut && (
-                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-3 h-3 text-white" />
                           )}
                         </div>
                         <span className="text-gray-700">LUT</span>
@@ -1666,9 +1625,7 @@ export default function Home() {
                       </div>
                       {csb5FormData.gstCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1676,9 +1633,7 @@ export default function Home() {
                           onClick={() => handleCsb5FileUpload("gstCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1699,9 +1654,7 @@ export default function Home() {
                       </div>
                       {csb5FormData.iecCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1709,9 +1662,7 @@ export default function Home() {
                           onClick={() => handleCsb5FileUpload("iecCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1732,9 +1683,7 @@ export default function Home() {
                       </div>
                       {csb5FormData.adCodeCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -1742,9 +1691,7 @@ export default function Home() {
                           onClick={() => handleCsb5FileUpload("adCodeCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -1766,9 +1713,7 @@ export default function Home() {
                         </div>
                         {csb5FormData.lutDocument ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -1776,9 +1721,7 @@ export default function Home() {
                             onClick={() => handleCsb5FileUpload("lutDocument")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -1886,9 +1829,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.panCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -1896,9 +1837,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("panCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -1917,9 +1856,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.aadharCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -1927,9 +1864,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("aadharCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -1952,9 +1887,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -1999,9 +1932,7 @@ export default function Home() {
                     }`}
                   >
                     <div className="flex flex-col items-center gap-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
+                      <Building2 className="w-5 h-5" />
                       <span className="font-semibold">Commercial</span>
                       <span className={`text-xs ${selectedOnboarding === "commercial" ? "text-gray-500" : "text-gray-400"}`}>For Businesses</span>
                     </div>
@@ -2015,9 +1946,7 @@ export default function Home() {
                     }`}
                   >
                     <div className="flex flex-col items-center gap-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
+                      <User className="w-5 h-5" />
                       <span className="font-semibold">Non-Commercial</span>
                       <span className={`text-xs ${selectedOnboarding === "noncommercial" ? "text-gray-500" : "text-gray-400"}`}>For Gifts & Samples</span>
                     </div>
@@ -2039,18 +1968,14 @@ export default function Home() {
                     <div className="flex items-center gap-8">
                       <label className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700">GST</span>
                       </label>
 
                       <label className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700">LUT</span>
                         <span className="text-gray-400 text-sm">(Against Bond or UT)</span>
@@ -2268,9 +2193,7 @@ export default function Home() {
                       </div>
                       {csb5LutFormData.gstCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -2278,9 +2201,7 @@ export default function Home() {
                           onClick={() => handleCsb5LutFileUpload("gstCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -2301,9 +2222,7 @@ export default function Home() {
                       </div>
                       {csb5LutFormData.iecCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -2311,9 +2230,7 @@ export default function Home() {
                           onClick={() => handleCsb5LutFileUpload("iecCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -2334,9 +2251,7 @@ export default function Home() {
                       </div>
                       {csb5LutFormData.adCodeCertificate ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -2344,9 +2259,7 @@ export default function Home() {
                           onClick={() => handleCsb5LutFileUpload("adCodeCertificate")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -2364,9 +2277,7 @@ export default function Home() {
                         <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                       </div>
                       <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-4 h-4" />
                         Uploaded
                       </span>
                     </div>
@@ -2469,9 +2380,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.panCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -2479,9 +2388,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("panCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -2500,9 +2407,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.aadharCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -2510,9 +2415,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("aadharCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -2535,9 +2438,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -2582,9 +2483,7 @@ export default function Home() {
                     }`}
                   >
                     <div className="flex flex-col items-center gap-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
+                      <Building2 className="w-5 h-5" />
                       <span className="font-semibold">Commercial</span>
                       <span className={`text-xs ${selectedOnboarding === "commercial" ? "text-gray-500" : "text-gray-400"}`}>For Businesses</span>
                     </div>
@@ -2598,9 +2497,7 @@ export default function Home() {
                     }`}
                   >
                     <div className="flex flex-col items-center gap-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
+                      <User className="w-5 h-5" />
                       <span className="font-semibold">Non-Commercial</span>
                       <span className={`text-xs ${selectedOnboarding === "noncommercial" ? "text-gray-500" : "text-gray-400"}`}>For Gifts & Samples</span>
                     </div>
@@ -2622,9 +2519,7 @@ export default function Home() {
                     <div className="flex items-center gap-8">
                       <label className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700">GST</span>
                       </label>
@@ -2639,9 +2534,7 @@ export default function Home() {
                           }}
                         >
                           {commercialFormData.hasLut && (
-                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-3 h-3 text-white" />
                           )}
                         </div>
                         <span className="text-gray-700">LUT</span>
@@ -2868,9 +2761,7 @@ export default function Home() {
                         <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                       </div>
                       <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-4 h-4" />
                         Uploaded
                       </span>
                     </div>
@@ -2884,9 +2775,7 @@ export default function Home() {
                         <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                       </div>
                       <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-4 h-4" />
                         Uploaded
                       </span>
                     </div>
@@ -2900,9 +2789,7 @@ export default function Home() {
                         <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                       </div>
                       <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-4 h-4" />
                         Uploaded
                       </span>
                     </div>
@@ -2920,9 +2807,7 @@ export default function Home() {
                         </div>
                         {commercialFormData.lutDocument ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -2930,9 +2815,7 @@ export default function Home() {
                             onClick={() => handleCommercialFileUpload("lutDocument")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -3040,9 +2923,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.panCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -3050,9 +2931,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("panCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -3071,9 +2950,7 @@ export default function Home() {
                           </div>
                           {nonCommercialFormData.aadharCard ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -3081,9 +2958,7 @@ export default function Home() {
                               onClick={() => handleNonCommercialFileUpload("aadharCard")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -3106,9 +2981,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -3321,9 +3194,7 @@ export default function Home() {
                       </div>
                       {nonCommercialFormData.panCard ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -3331,9 +3202,7 @@ export default function Home() {
                           onClick={() => handleNonCommercialFileUpload("panCard")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -3368,9 +3237,7 @@ export default function Home() {
                       </div>
                       {nonCommercialFormData.aadharCard ? (
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       ) : (
@@ -3378,9 +3245,7 @@ export default function Home() {
                           onClick={() => handleNonCommercialFileUpload("aadharCard")}
                           className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                          </svg>
+                          <CloudUpload className="w-4 h-4" />
                           Upload
                         </button>
                       )}
@@ -3401,9 +3266,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -3450,9 +3313,7 @@ export default function Home() {
                   <div className="flex items-center gap-8">
                     <label className="flex items-center gap-2">
                       <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-gray-700">GST</span>
                     </label>
@@ -3467,9 +3328,7 @@ export default function Home() {
                         }}
                       >
                         {formData.hasLut && (
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         )}
                       </div>
                       <span className="text-gray-700">LUT</span>
@@ -3700,9 +3559,7 @@ export default function Home() {
                         </div>
                         {formData.gstCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -3710,9 +3567,7 @@ export default function Home() {
                             onClick={() => handleFileUpload("gstCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -3733,9 +3588,7 @@ export default function Home() {
                         </div>
                         {formData.iecCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -3743,9 +3596,7 @@ export default function Home() {
                             onClick={() => handleFileUpload("iecCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -3766,9 +3617,7 @@ export default function Home() {
                         </div>
                         {formData.adCodeCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -3776,9 +3625,7 @@ export default function Home() {
                             onClick={() => handleFileUpload("adCodeCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -3800,9 +3647,7 @@ export default function Home() {
                           </div>
                           {formData.lutDocument ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -3810,9 +3655,7 @@ export default function Home() {
                               onClick={() => handleFileUpload("lutDocument")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -3834,9 +3677,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -3881,9 +3722,7 @@ export default function Home() {
                   <div className="flex items-center gap-8">
                     <label className="flex items-center gap-2">
                       <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-gray-700">GST</span>
                     </label>
@@ -3898,9 +3737,7 @@ export default function Home() {
                         }}
                       >
                         {csb5FormData.hasLut && (
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         )}
                       </div>
                       <span className="text-gray-700">LUT</span>
@@ -4115,9 +3952,7 @@ export default function Home() {
                         </div>
                         {csb5FormData.gstCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4125,9 +3960,7 @@ export default function Home() {
                             onClick={() => handleCsb5FileUpload("gstCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4148,9 +3981,7 @@ export default function Home() {
                         </div>
                         {csb5FormData.iecCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4158,9 +3989,7 @@ export default function Home() {
                             onClick={() => handleCsb5FileUpload("iecCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4181,9 +4010,7 @@ export default function Home() {
                         </div>
                         {csb5FormData.adCodeCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4191,9 +4018,7 @@ export default function Home() {
                             onClick={() => handleCsb5FileUpload("adCodeCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4215,9 +4040,7 @@ export default function Home() {
                           </div>
                           {csb5FormData.lutDocument ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -4225,9 +4048,7 @@ export default function Home() {
                               onClick={() => handleCsb5FileUpload("lutDocument")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -4249,9 +4070,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -4296,18 +4115,14 @@ export default function Home() {
                   <div className="flex items-center gap-8">
                     <label className="flex items-center gap-2">
                       <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-gray-700">GST</span>
                     </label>
 
                     <label className="flex items-center gap-2">
                       <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-gray-700">LUT</span>
                       <span className="text-gray-400 text-sm">(Against Bond or UT)</span>
@@ -4495,9 +4310,7 @@ export default function Home() {
                         </div>
                         {csb5LutFormData.gstCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4505,9 +4318,7 @@ export default function Home() {
                             onClick={() => handleCsb5LutFileUpload("gstCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4528,9 +4339,7 @@ export default function Home() {
                         </div>
                         {csb5LutFormData.iecCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4538,9 +4347,7 @@ export default function Home() {
                             onClick={() => handleCsb5LutFileUpload("iecCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4561,9 +4368,7 @@ export default function Home() {
                         </div>
                         {csb5LutFormData.adCodeCertificate ? (
                           <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
+                            <Check className="w-4 h-4" />
                             Uploaded
                           </span>
                         ) : (
@@ -4571,9 +4376,7 @@ export default function Home() {
                             onClick={() => handleCsb5LutFileUpload("adCodeCertificate")}
                             className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                            </svg>
+                            <CloudUpload className="w-4 h-4" />
                             Upload
                           </button>
                         )}
@@ -4591,9 +4394,7 @@ export default function Home() {
                           <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                         </div>
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       </div>
@@ -4610,9 +4411,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -4657,9 +4456,7 @@ export default function Home() {
                   <div className="flex items-center gap-8">
                     <label className="flex items-center gap-2">
                       <div className="w-5 h-5 rounded border-2 bg-blue-500 border-blue-500 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
+                        <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-gray-700">GST</span>
                     </label>
@@ -4674,9 +4471,7 @@ export default function Home() {
                         }}
                       >
                         {commercialFormData.hasLut && (
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-3 h-3 text-white" />
                         )}
                       </div>
                       <span className="text-gray-700">LUT</span>
@@ -4888,9 +4683,7 @@ export default function Home() {
                           <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                         </div>
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       </div>
@@ -4904,9 +4697,7 @@ export default function Home() {
                           <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                         </div>
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       </div>
@@ -4920,9 +4711,7 @@ export default function Home() {
                           <span className="text-gray-400 cursor-help text-xs">ⓘ</span>
                         </div>
                         <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
+                          <Check className="w-4 h-4" />
                           Uploaded
                         </span>
                       </div>
@@ -4940,9 +4729,7 @@ export default function Home() {
                           </div>
                           {commercialFormData.lutDocument ? (
                             <span className="text-green-600 text-sm font-medium flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
+                              <Check className="w-4 h-4" />
                               Uploaded
                             </span>
                           ) : (
@@ -4950,9 +4737,7 @@ export default function Home() {
                               onClick={() => handleCommercialFileUpload("lutDocument")}
                               className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm"
                             >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                              </svg>
+                              <CloudUpload className="w-4 h-4" />
                               Upload
                             </button>
                           )}
@@ -4974,9 +4759,7 @@ export default function Home() {
                 className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 Submit
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
